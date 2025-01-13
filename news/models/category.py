@@ -12,4 +12,4 @@ class Category(Auditor):
     name = models.CharField(max_length=255)
     status = models.CharField(
         max_length=20, 
-        choices=CategoryChoices.choices    )
+        choices=CategoryChoices.choices)

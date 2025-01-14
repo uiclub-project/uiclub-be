@@ -13,3 +13,6 @@ class Article(Auditor):
     time_to_read = models.IntegerField()
     slug= models.SlugField(max_length=255, unique=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name

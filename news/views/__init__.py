@@ -1,1 +1,1 @@
-from news.views.article_api_view import ArticleListAPIView
+from news.views.article_api_view import ArticleListAPIView, ArticleDetailAPIView

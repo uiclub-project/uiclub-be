@@ -2,6 +2,8 @@ from rest_framework import serializers
 from news.models import Article
 
 class ArticleSerializer(serializers.ModelSerializer):
+    
+    category_name = serializers.CharField(source='category.name', read_only=True)
     class Meta:
         model = Article
         fields = (
@@ -14,6 +16,6 @@ class ArticleSerializer(serializers.ModelSerializer):
             'content',
             'time_to_read',
             'slug',
-            'category',
+            'category_name',
         )
     

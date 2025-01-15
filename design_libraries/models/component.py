@@ -5,7 +5,7 @@ from django.db import models
 
 class Component(Auditor):
     
-    
+    "image needed pending"
     class ComponentChoices(models.TextChoices):
         FORM='Form'
         INPUT='Input'

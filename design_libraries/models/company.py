@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Company(Auditor):
+    "logo needed pending"
     name = models.CharField(max_length=255)
     
     def __str__(self):

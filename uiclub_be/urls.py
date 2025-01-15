@@ -20,6 +20,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/news/", include("news.urls")),
-    path("api/design_libraries/", include("design_libraries.urls")),
+    path("api/design-libraries/", include("design_libraries.urls")),
     path('silk/', include('silk.urls', namespace='silk'))
 ]

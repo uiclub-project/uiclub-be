@@ -4,15 +4,16 @@ from design_libraries.serializers.component_serializer import ComponentSerialize
 
 class DesignSystemSerializer(serializers.ModelSerializer):
     components = ComponentSerializer(many=True, read_only=True)
+    company_name = serializers.CharField(source='company.name', read_only=True)
+
     class Meta:
         model = DesignSystem
         fields = (
             'id',
             'description',
-            'company',
+            'company_name',
             'components',
             'name',
             'version',
             'quantity_components',
         )
-    

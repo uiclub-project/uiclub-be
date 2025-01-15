@@ -5,6 +5,6 @@ from design_libraries.serializers.design_system_serializer import DesignSystemSe
 
 
 class DesignSystemListAPIView(generics.ListAPIView):
-  queryset = DesignSystem.objects.prefetch_related('components', 'company')
+  queryset = DesignSystem.objects.prefetch_related('components__company')
   serializer_class = DesignSystemSerializer
   

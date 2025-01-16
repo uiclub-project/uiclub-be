@@ -16,7 +16,7 @@ class Component(Auditor):
             max_length=10, 
             choices=ComponentChoices.choices,
         )
-    company =  models.ForeignKey('Company', on_delete=models.CASCADE)
+    company =  models.ForeignKey('Company', on_delete=models.CASCADE, related_name='components')
        
     def __str__(self):
         return self.name

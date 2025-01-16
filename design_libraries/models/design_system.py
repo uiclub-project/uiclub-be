@@ -5,8 +5,8 @@ from django.db import models
 
 class DesignSystem(Auditor):
     description = models.TextField()
-    company =  models.ForeignKey('Company', on_delete=models.CASCADE)
-    components = models.ManyToManyField('Component')
+    company =  models.ForeignKey('Company', on_delete=models.CASCADE, related_name='design_systems')
+    components = models.ManyToManyField('Component', related_name='design_systems')
     name = models.CharField(max_length=255)
     version = models.CharField(max_length=255)
     

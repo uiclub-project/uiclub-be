@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-=cx&)p55u2h19fg7@4l3@-$^wi)!vuc+1@78z4se8cb%lceu88
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend']
 
 # Application definition
 
@@ -41,7 +40,9 @@ INSTALLED_APPS = [
     'core',
     'news',
     'design_libraries',
-    'silk'
+    'silk',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -52,8 +53,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'silk.middleware.SilkyMiddleware',
+]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Allow your frontend's URL
+    "http://frontend:3000",   # Allow Docker service name for frontend
 ]
 
 ROOT_URLCONF = 'uiclub_be.urls'

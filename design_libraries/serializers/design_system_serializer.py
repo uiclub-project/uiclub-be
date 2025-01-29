@@ -16,4 +16,5 @@ class DesignSystemSerializer(serializers.ModelSerializer):
             'name',
             'version',
             'quantity_components',
+            'popularity'
         )

@@ -20,6 +20,7 @@ class DesignSystem(Auditor):
             choices=PopularityChoices.choices,
             default=PopularityChoices.MEDIUM
         )
+    is_updated = models.BooleanField(default=True)
     
     @property
     def quantity_components(self):

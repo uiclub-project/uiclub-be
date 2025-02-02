@@ -11,4 +11,3 @@ class ComponentSerializer(serializers.ModelSerializer):
             'type',
             'company_name',
         )
-    

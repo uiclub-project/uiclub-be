@@ -12,4 +12,4 @@ class DesignSystemDetailAPIView(generics.RetrieveAPIView):
   serializer_class = DesignSystemDetailSerializer
   lookup_url_kwarg = 'ds_id'
   
-"todo: components api view pending"
+#todo: components api view pending

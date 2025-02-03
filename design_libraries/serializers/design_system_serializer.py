@@ -9,7 +9,7 @@ class DesignSystemListSerializer(serializers.ModelSerializer):
         model = DesignSystem
         fields = (
             'id',
-            'description',
+            'short_description',
             'company_name',
             'name',
             'quantity_components',
@@ -25,7 +25,7 @@ class DesignSystemDetailSerializer(serializers.ModelSerializer):
         model = DesignSystem
         fields = (
             'id',
-            'description',
+            'large_description',
             'company_name',
             'name',
             'version',

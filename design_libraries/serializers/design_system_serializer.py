@@ -14,7 +14,8 @@ class DesignSystemListSerializer(serializers.ModelSerializer):
             'name',
             'quantity_components',
             'popularity',
-            'is_updated'
+            'is_updated',
+            'thumbnail_image'
         )
         
 class DesignSystemDetailSerializer(serializers.ModelSerializer):
@@ -33,4 +34,5 @@ class DesignSystemDetailSerializer(serializers.ModelSerializer):
             'popularity',
             'is_updated',
             'components',  
+            'thumbnail_image'
         )

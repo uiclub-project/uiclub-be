@@ -10,7 +10,7 @@ class DesignSystem(Auditor):
         MEDIUM='Medium'
         LOW='Low'
     large_description = models.TextField()
-    short_description = models.TextField(default="Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.")
+    short_description = models.TextField(default="Description here")
     company =  models.ForeignKey('Company', on_delete=models.CASCADE, related_name='design_systems')
     components = models.ManyToManyField('Component', related_name='design_systems')
     name = models.CharField(max_length=255)
@@ -20,7 +20,7 @@ class DesignSystem(Auditor):
             choices=PopularityChoices.choices,
             default=PopularityChoices.MEDIUM
         )
-    
+    thumbnail_image = models.ImageField(upload_to='thumbnails/')
     is_updated = models.BooleanField(default=True)
     
     @property

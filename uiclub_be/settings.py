@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-=cx&)p55u2h19fg7@4l3@-$^wi)!vuc+1@78z4se8cb%lceu88
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend']
+# Modify ALLOWED_HOSTS to ensure both localhost and the production domain are covered
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', 'frontend']
 
 # Application definition
 
@@ -116,7 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-MEDIA_URL = '/media/'
+# Media file settings
+MEDIA_URL = "http://localhost:8000/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Internationalization

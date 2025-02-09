@@ -18,6 +18,7 @@ class DesignSystemListSerializer(serializers.ModelSerializer):
             'thumbnail_image'
         )
         
+        
 class DesignSystemDetailSerializer(serializers.ModelSerializer):
     components = ComponentSerializer(many=True, read_only=True)
     company_name = serializers.CharField(source='company.name', read_only=True)

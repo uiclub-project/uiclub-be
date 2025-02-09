@@ -24,4 +24,8 @@ urlpatterns = [
     path("api/news/", include("news.urls")),
     path("api/design-libraries/", include("design_libraries.urls")),
     path('silk/', include('silk.urls', namespace='silk'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+# Esto solo debe estar en desarrollo (no en producción)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

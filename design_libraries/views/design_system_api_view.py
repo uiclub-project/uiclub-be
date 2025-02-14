@@ -10,6 +10,6 @@ class DesignSystemListAPIView(generics.ListAPIView):
 class DesignSystemDetailAPIView(generics.RetrieveAPIView):
   queryset = DesignSystem.objects.prefetch_related('components__company')  
   serializer_class = DesignSystemDetailSerializer
-  lookup_url_kwarg = 'ds_id'
-  
+  lookup_field = 'slug' 
+  lookup_url_kwarg = 'slug'  
 #todo: components api view pending

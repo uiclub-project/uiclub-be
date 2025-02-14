@@ -22,6 +22,7 @@ class DesignSystem(Auditor):
         )
     thumbnail_image = models.ImageField(upload_to='thumbnails/')
     is_updated = models.BooleanField(default=True)
+    slug = models.CharField(max_length=50)
     
     @property
     def quantity_components(self):

@@ -23,6 +23,7 @@ class DesignSystem(Auditor):
     thumbnail_image = models.ImageField(upload_to='thumbnails/')
     is_updated = models.BooleanField(default=True)
     slug = models.CharField(max_length=50)
+    links = models.ForeignKey('Link', on_delete=models.CASCADE, null=True)
     
     @property
     def quantity_components(self):

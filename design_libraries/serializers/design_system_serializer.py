@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from design_libraries.models import DesignSystem
 from design_libraries.serializers.component_serializer import ComponentSerializer
+from design_libraries.serializers.link_serializer import LinkSerializer
 
 class DesignSystemListSerializer(serializers.ModelSerializer):
     company_name = serializers.CharField(source='company.name', read_only=True)
@@ -22,6 +23,7 @@ class DesignSystemListSerializer(serializers.ModelSerializer):
         
 class DesignSystemDetailSerializer(serializers.ModelSerializer):
     components = ComponentSerializer(many=True, read_only=True)
+    links= LinkSerializer(read_only=True)
     company_name = serializers.CharField(source='company.name', read_only=True)
 
     class Meta:
@@ -36,5 +38,6 @@ class DesignSystemDetailSerializer(serializers.ModelSerializer):
             'popularity',
             'is_updated',
             'components',  
-            'thumbnail_image'
+            'thumbnail_image',
+            'links'
         )

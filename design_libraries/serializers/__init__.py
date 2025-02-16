@@ -1,2 +1,3 @@
 from design_libraries.serializers.design_system_serializer import DesignSystemListSerializer, DesignSystemDetailSerializer
 from design_libraries.serializers.component_serializer import ComponentSerializer
+from design_libraries.serializers.link_serializer import LinkSerializer

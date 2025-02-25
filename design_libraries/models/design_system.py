@@ -30,4 +30,4 @@ class DesignSystem(Auditor):
         return self.components.count()
      
     def __str__(self):
-        return self.name
+        return self.name if self.name else "Unnamed Design System"

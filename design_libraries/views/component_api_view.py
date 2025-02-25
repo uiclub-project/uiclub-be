@@ -8,3 +8,8 @@ class ComponentDesignSystemsAPIView(generics.ListAPIView):
     def get_queryset(self):
         design_system_id = self.kwargs.get("design_id")
         return Component.objects.filter(design_systems__pk=design_system_id)
+    
+class ComponentDetailAPIView(generics.RetrieveAPIView):
+    queryset = Component.objects.all()
+    serializer_class = ComponentSerializer
+    lookup_url_kwarg = 'component_id'

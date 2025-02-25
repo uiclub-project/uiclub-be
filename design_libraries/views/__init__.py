@@ -1,2 +1,3 @@
 from design_libraries.views.design_system_api_view import DesignSystemListAPIView, DesignSystemDetailAPIView
 from design_libraries.views.component_api_view import ComponentDesignSystemsAPIView
+from design_libraries.views.component_api_view import ComponentDetailAPIView

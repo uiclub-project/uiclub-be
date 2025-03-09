@@ -27,8 +27,6 @@ RUN python manage.py collectstatic --noinput
 # Run database migrations
 RUN python manage.py migrate
 
-# Expose the application port
-EXPOSE 8000
 
 # Use Gunicorn as the production server
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "uiclub_be.wsgi:application"]

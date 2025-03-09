@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-=cx&)p55u2h19fg7@4l3@-$^wi)!vuc+1@78z4se8cb%lceu88
 DEBUG = True
 
 # Modify ALLOWED_HOSTS to ensure both localhost and the production domain are covered
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', 'frontend']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 # Application definition
 
@@ -62,10 +63,7 @@ MIDDLEWARE = [
     'silk.middleware.SilkyMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Allow your frontend's URL
-    "http://frontend:3000",   # Allow Docker service name for frontend
-]
+CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS').split(',')
 
 ROOT_URLCONF = 'uiclub_be.urls'
 
@@ -94,11 +92,11 @@ WSGI_APPLICATION = 'uiclub_be.wsgi.application'
 DATABASES = {
   "default": {
     "ENGINE": "django.db.backends.postgresql",
-    "NAME":"DjangoDB",
-    "USER": "postgres",
-    "PASSWORD": "MySecr3tPassWordas2",  # Updated to match docker-compose.yml
-    "HOST": "db",  # Service name from docker-compose.yml
-    "PORT": "5432",
+    "NAME": config('DATABASE_NAME'),
+    "USER": config('DATABASE_USER'),
+    "PASSWORD": config('DATABASE_PASSWORD'),
+    "HOST": config('DATABASE_HOST'),
+    "PORT": config('DATABASE_PORT'),
   }
 }
 
@@ -139,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
